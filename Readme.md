@@ -96,7 +96,8 @@ Before Start , you need to have installed Anaconda, Miniconda or other environme
 # How to use it
 
 ### Authentication Page
-Introduce your User and Password . Folllow the procedure in the bottom to create an user in Streamlit
+Introduce your User and Password . Follow the procedure in the bottom to create an user in Streamlit. For the demo I have created two users nvidiademo and user1. On the on the file hasher/ex.yaml file you have all details.
+
 
 ![file](images/login.png)
 

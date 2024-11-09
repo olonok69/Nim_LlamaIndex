@@ -82,9 +82,6 @@ if __name__ == "__main__":
     # read env file
     config = dotenv_values(os.path.join(ROOT_DIR, "keys", ".env"))
 
-    # key access gemini
-    if "GOOGLE_API_KEY" not in os.environ:
-        os.environ["GOOGLE_API_KEY"] = config.get("GEMINI-API-KEY")
     # key access NVIDIA NIM
     if "NVIDIA_API_KEY" not in os.environ:
         os.environ["NVIDIA_API_KEY"] = config.get("NVIDIA_API_KEY")
