@@ -79,6 +79,8 @@ The Llama 3.2 collection of multilingual large language models (LLMs) is a colle
 
 https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct
 
+#### Note. You need to get access to this model before use. In HugginFace Hub request access to Meta
+
 # Install 
 Before Start , you need to have installed Anaconda, Miniconda or other environments manager tool, Vscode and docker Desktop. If you plan to use a GPU in your docker Install Nvidia Container Toolkit (See https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html). I am working in a Debian Distro under WSL 2 , host Windows 11
 
