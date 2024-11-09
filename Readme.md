@@ -23,6 +23,7 @@ https://docs.api.nvidia.com/nim/reference/llm-apis
 LlamaIndex is a framework for building context-augmented generative AI applications with LLMs including agents and workflows.
 
 https://docs.llamaindex.ai/en/stable/
+
 ![file](images/llamaindex.png)
 
 # Models
