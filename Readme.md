@@ -25,7 +25,59 @@ LlamaIndex is a framework for building context-augmented generative AI applicati
 https://docs.llamaindex.ai/en/stable/
 ![file](images/llamaindex.png)
 
+# Models
 
+### Embeddings nvidia/embed-qa-4
+```
+Architecture Type: Transformer
+Network Architecture: Fine-tuned E5-Large-Unsupervised retriever
+Embedding Dimension: 1024
+Parameter Count: 335 million
+```
+https://build.nvidia.com/nvidia/embed-qa-4/modelcard 
+
+
+### LLM,s From NGC
+You need to create an account in NGC and there access to NIM Dashboard and there generate an NVIDIA_API_KEY
+I have my Nvidia API key in a .env file and either in the APP or the Notebook I load it into the environment variables
+```
+from dotenv import dotenv_values
+import os
+# read env file
+ROOT_DIR = os.getcwd()
+config = dotenv_values(os.path.join(ROOT_DIR, "keys", ".env"))
+os.environ['NVIDIA_API_KEY'] = config.get('NVIDIA_API_KEY')
+```
+
+*To access models just instantiate the objects NVIDIA and NVIDIAEmbedding after setting the NVIDIA_API_KEY to the object Settings of LLamaIndex*
+
+ex:
+```
+from llama_index.core import Settings
+from llama_index.llms.nvidia import NVIDIA
+from llama_index.embeddings.nvidia import NVIDIAEmbedding
+
+Settings.embed_model = NVIDIAEmbedding(model="NV-Embed-QA", truncate="END")
+
+# Here we are using meta/llama-3.2-3b-instruct model from API Catalog
+Settings.llm = NVIDIA(model="meta/llama-3.2-3b-instruct", temperature=0.7)
+
+```
+
+#### In Demo LLM Microsoft Phi3 3.5 128K
+
+Phi-3.5-mini is a lightweight, state-of-the-art open model built upon datasets used for Phi-3 - synthetic data and filtered publicly available websites - with a focus on very high-quality, reasoning dense data. The model belongs to the Phi-3 model family and supports 128K token context length. The model underwent a rigorous enhancement process, incorporating both supervised fine-tuning, proximal policy optimization, and direct preference optimization to ensure precise instruction adherence and robust safety measures.
+
+https://huggingface.co/microsoft/Phi-3.5-mini-instruct
+
+https://github.com/microsoft/Phi-3CookBook
+
+
+### Notebook Include LLama 3.2 3b Instruct
+
+The Llama 3.2 collection of multilingual large language models (LLMs) is a collection of pretrained and instruction-tuned generative models in 1B and 3B sizes (text in/text out). The Llama 3.2 instruction-tuned text only models are optimized for multilingual dialogue use cases, including agentic retrieval and summarization tasks. They outperform many of the available open source and closed chat models on common industry benchmarks.
+
+https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct
 
 # Install 
 Before Start , you need to have installed Anaconda, Miniconda or other environments manager tool, Vscode and docker Desktop. If you plan to use a GPU in your docker Install Nvidia Container Toolkit (See https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html). I am working in a Debian Distro under WSL 2 , host Windows 11
