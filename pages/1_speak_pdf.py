@@ -229,8 +229,8 @@ if __name__ == "__main__":
         st.session_state["authentication_status"] == None
         or st.session_state["authentication_status"] == False
     ):
-        st.session_state.runpage = "pages.py"
-        st.switch_page("pages.py")
+        st.session_state.runpage = "main.py"
+        st.switch_page("main.py")
     if "salir_1" not in st.session_state:
         st.session_state["salir_1"] = False
 
