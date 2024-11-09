@@ -17,3 +17,6 @@ pymupdf4llm
 streamlit-authenticator
 detectaicore
 streamlit_pdf_viewer==0.0.12
+fastapi
+ipython
+orjson

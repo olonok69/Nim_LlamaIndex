@@ -1,0 +1,14 @@
+credentials:
+  usernames:
+    user1:
+      email: test@gmail.com
+      name: user1 
+      password:  text#me
+    nvidiademo:
+      email: demo@nvidia.com
+      name: nvidiademo
+      password:  laPalma50 
+cookie:
+  expiry_days: 0
+  key: laPalma50 # Must be string
+  name: thecokkei
