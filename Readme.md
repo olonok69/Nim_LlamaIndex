@@ -92,6 +92,32 @@ Before Start , you need to have installed Anaconda, Miniconda or other environme
 4. to run the application on a shell : python -m streamlit run main.py
 6. If you want to create the docker container run docker build --pull --rm --build-arg user_app=app -f "Dockerfile" -t nim_llamaindex:latest "."
 
+Note: You need to create a folder with a .env file and a confg.yaml file.
+
+*.env*
+```
+
+INDEX_NAME=name_of_your_index
+NVIDIA_API_KEY=nvapi-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+NVIDIA_EMBEDDINGS=NV-Embed-QA
+NVIDIA_MODEL=microsoft/phi-3-small-128k-instruct
+
+```
+
+*config.yaml READ PROCEDURE at bottom of this file*
+```
+credentials:
+  usernames:
+    user1:
+      email: test@test.com
+      name: user1 
+      password: hashed_password # To be replaced with hashed password
+    nvidiademo:
+      email: demo@test.com
+      name: nvidiademo
+      password: hashed_password # To be replaced with hashed password
+
+```
 
 # How to use it
 

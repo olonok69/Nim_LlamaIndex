@@ -29,3 +29,4 @@ faiss/.milvus_example.db.lock
 faiss/milvus_example.db
 saves/
 keys/.env
+keys/
